@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style/style.css">
+    <title>Node</title>
+</head>
+<body id="content">
+    <button id="btn">Change</button>
+    <script>
+        const btn = document.getElementById('btn'),
+              page = document.getElementById('content')
+        let bg = [
+            ["linear-gradient(to right, red, blue)"],
+            ["linear-gradient(to right, steelblue, springgreen)"],
+            ["linear-gradient(to right, gold, red)"],
+            ["linear-gradient(to right, mediumpurple, salmon)"],
+            ["linear-gradient(to right, greenyellow, rosybrown)"],
+        ]
+
+        let before, i
+        btn.addEventListener('click', () => {
+            while (before == i)
+                i = Math.floor(Math.random() * (bg.length - 1))
+            before = i
+
+            page.style.background = bg[i]
+        })
+    </script>
+</body>
+</html>
